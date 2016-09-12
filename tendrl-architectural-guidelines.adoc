@@ -5,8 +5,8 @@
 
 == Goals
 
-* Tendrl is a framework that provides services to Storage Systems, that enable
-  and/or enhance the manageability of these systems.
+* Tendrl is a framework that provides services to Storage Systems. It enables
+  and/or enhances the manageability of these systems.
 * Through the implementation of the core framework and the supporting services,
   Tendrl provides an interface for the administrator to know the state of the
   Storage Systems being managed and to perform operations on the
@@ -17,7 +17,7 @@
   lag-free interactions.
 * The interface should convey the state of the Storage Systems using
   System-specific terms and representations.
-* Tendrl, as a framework, is generic and abstract enough to allow a low
+* Tendrl, as a framework, is generic and abstract to facilitate a low
   entry barrier for different types of Storage Systems to plug into Tendrl to
   leverage its services.
 * Tendrl and the Storage Systems communicate with an abstract glue layer, with
@@ -31,7 +31,7 @@
 == Assumptions
 
 * Tendrl does not need to be a real-time system.
-* Tendrl's interface is not expected to be loaded with hundreds of operational
+* Tendrl's (public) interface is not expected to be loaded with hundreds of operational
   queries per minute, given the nature of the Systems it represents.
 * In a deployed environment, it is easier to update configuration rather than
   code.
@@ -49,8 +49,8 @@ upon the direction Tendrl takes as a project.
 
 === The Storage Systems leverage Tendrl.
 
-Tendrl needs to be thought of as a framework which provides services to Storage
-Systems. In this domain, the Storage Systems would choose to leverage one or
+Tendrl needs to be viewed as a framework which provides services to Storage
+Systems. In this domain, the Storage Systems would choose to consume and/or build-upon one or
 more of the services provided by Tendrl. Neither the Storage Systems or Tendrl
 need to have an explicit dependency upon each other for their core operations.
 
@@ -104,7 +104,7 @@ without sacrificing the generic nature of Tendrl.
 
 === Tendrl doesn’t need to understand Storage System specific information, but needs merely to be able to display it to allow the Administrator to understand and act upon it.
 
-The Object Model is flexible enough to accommodate current and future metadata
+The Object Model is designed to be flexible enough to accommodate current and future metadata
 to describe the Objects. This metadata can be used to display the information
 to the Administrator that makes it legible and allows the Administrator to take
 informed decisions and to initiate the correct Actions with the appropriate
@@ -117,8 +117,8 @@ would allow Tendrl to respond to Events or changes in the Object States,
 without the explicit involvement of the Administrator, unless specifically
 required.
 
-In any of these cases, Tendrl doesn’t need to understand what a particular
-state or action represents -- it simply needs to know how to convey the
+In any of these cases, Tendrl does not need to understand what a particular
+state or action represents -- it requires to know how to convey the
 information to the administrator, gather and provide the appropriate parameters
 and actions to the Storage System on behalf of the Administrator, and/or take
 appropriate actions upon the Objects, as prescribed by the Object metadata.
